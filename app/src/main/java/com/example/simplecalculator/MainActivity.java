@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     TextView title,text1,text2, result;
     EditText num1,num2;
-    Button btnAdd, btnSub, btnMul, btnDiv;
+    Button btnAdd, btnSub, btnMul, btnDiv, btnPer;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnSub = findViewById(R.id.btnSub);
         btnMul = findViewById(R.id.btnMul);
         btnDiv = findViewById(R.id.btnDiv);
+        btnPer = findViewById(R.id.btnPer);
 
 
 
@@ -80,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnPer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double x = Double.parseDouble(num1.getText().toString());
+                double y = Double.parseDouble(num2.getText().toString());
+                result.setText(""+per(x,y));
+            }
+        });
     }
     public double add(double a, double b){
         double final_result = a+b;
@@ -96,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public double div(double a, double b){
         double final_result = a/b;
+        return final_result;
+    }
+
+    public double per(double a, double b){
+        double final_result = a%b;
         return final_result;
     }
 
