@@ -85,9 +85,19 @@ public class MainActivity extends AppCompatActivity {
         btnPer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double x = Double.parseDouble(num1.getText().toString());
-                double y = Double.parseDouble(num2.getText().toString());
-                result.setText(""+per(x,y));
+                try {
+                    double x = Double.parseDouble(num1.getText().toString());
+                    double y = Double.parseDouble(num2.getText().toString());
+
+                    if (y == 0) {
+                        result.setText("0");
+                    } else {
+                        double divisionResult = per(x, y);
+                        result.setText(String.valueOf(divisionResult));
+                    }
+                } catch (NumberFormatException e) {
+                    result.setText("Error: Invalid input. Please enter valid numbers.");
+                }
             }
         });
     }
