@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView title,text1,text2, result;
     EditText num1,num2;
     Button btnAdd, btnSub, btnMul, btnDiv, btnPer;
+    double x,y, final_result;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,16 +40,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                double x = Double.parseDouble(num1.getText().toString());
-                double y = Double.parseDouble(num2.getText().toString());
+                 x = Double.parseDouble(num1.getText().toString());
+                 y = Double.parseDouble(num2.getText().toString());
                 result.setText(""+add(x,y));
             }
         });
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double x = Double.parseDouble(num1.getText().toString());
-                double y = Double.parseDouble(num2.getText().toString());
+                x = Double.parseDouble(num1.getText().toString());
+                y = Double.parseDouble(num2.getText().toString());
                 result.setText(""+sub(x,y));
             }
         });
@@ -57,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         btnMul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double x = Double.parseDouble(num1.getText().toString());
-                double y = Double.parseDouble(num2.getText().toString());
+                x = Double.parseDouble(num1.getText().toString());
+                y = Double.parseDouble(num2.getText().toString());
                 result.setText(""+mul(x,y));
             }
         });
@@ -67,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    double x = Double.parseDouble(num1.getText().toString());
-                    double y = Double.parseDouble(num2.getText().toString());
+                    x = Double.parseDouble(num1.getText().toString());
+                    y = Double.parseDouble(num2.getText().toString());
 
                     if (y == 0) {
                         result.setText("Cannot be divided by 0");
@@ -86,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    double x = Double.parseDouble(num1.getText().toString());
-                    double y = Double.parseDouble(num2.getText().toString());
+                    x = Double.parseDouble(num1.getText().toString());
+                    y = Double.parseDouble(num2.getText().toString());
 
                     if (y == 0) {
                         result.setText("0");
@@ -102,25 +103,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public double add(double a, double b){
-        double final_result = a+b;
+        final_result = a+b;
         return final_result;
     }
     public double sub(double a, double b){
-        double final_result = a-b;
+        final_result = a-b;
         return final_result;
     }
 
     public double mul(double a, double b){
-        double final_result = a*b;
+        final_result = a*b;
         return final_result;
     }
     public double div(double a, double b){
-        double final_result = a/b;
+        final_result = a/b;
         return final_result;
     }
 
     public double per(double a, double b){
-        double final_result = a%b;
+        final_result = a%b;
         return final_result;
     }
 
